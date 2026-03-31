@@ -1,0 +1,20 @@
+
+#QUARTA QUESTAO
+
+CREATE TABLE Bancos (
+    Codigo INT PRIMARY KEY,
+    Nome VARCHAR(100)
+);
+
+CREATE TABLE Pessoas (
+    CPF VARCHAR(14) PRIMARY KEY,
+    Nome VARCHAR(100)
+);
+
+CREATE TABLE Conta_Corrente (
+    Banco INT,
+    Pessoa VARCHAR(14),
+    Numero INT,
+    FOREIGN KEY (Banco) REFERENCES Bancos(Codigo),
+    FOREIGN KEY (Pessoa) REFERENCES Pessoas(CPF)
+);

@@ -1,0 +1,35 @@
+PRAGMA foreign_keys = ON;
+
+DROP TABLE IF EXISTS tarefa;
+DROP TABLE IF EXISTS projeto;
+
+CREATE TABLE projeto (
+    id INTEGER PRIMARY KEY,
+    nome TEXT
+);
+
+CREATE TABLE tarefa (
+    id INTEGER PRIMARY KEY,
+    descricao TEXT,
+    projeto_id INTEGER,
+    FOREIGN KEY (projeto_id)
+        REFERENCES projeto(id)
+        ON DELETE CASCADE
+);
+
+INSERT INTO projeto (id, nome)
+VALUES (1, 'Projeto A');
+
+INSERT INTO tarefa (id, descricao, projeto_id)
+VALUES
+(1, 'Tarefa 1', 1),
+(2, 'Tarefa 2', 1),
+(3, 'Tarefa 3', 1),
+(4, 'Tarefa 4', 1),
+(5, 'Tarefa 5', 1);
+
+DELETE FROM projeto
+WHERE id = 1;
+
+SELECT * FROM projeto;
+SELECT * FROM tarefa;

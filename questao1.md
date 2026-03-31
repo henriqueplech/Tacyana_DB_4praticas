@@ -1,0 +1,1 @@
+A Integridade Referencial é uma regra que garante que os dados de uma tabela só possam se relacionar com dados que realmente existam em outra tabela. Ela impede registros órfãos porque, se você tentar inserir um valor na tabela filha que não existe na tabela pai, o banco de dados rejeita a operação — mantendo os dados sempre consistentes e confiáveis.
